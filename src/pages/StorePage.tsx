@@ -66,7 +66,7 @@ export function StorePage() {
       ) : (
         <>
           {/* Linked Stores List */}
-          <div className="space-y-3 mb-4">
+          <div className="space-y-4 mb-6">
             {linkedStores.map((ls) => {
               const store = STORES_MAP.get(ls.storeId);
               if (!store) return null;
@@ -74,7 +74,7 @@ export function StorePage() {
 
               return (
                 <Card key={ls.storeId}>
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center text-2xl flex-shrink-0">
                       {store.emoji}
                     </div>
@@ -146,7 +146,7 @@ export function StorePage() {
         ) : (
           <>
             <label className="text-sm font-medium text-gray-700 mb-2 block">Select Store</label>
-            <div className="grid grid-cols-2 gap-2 mb-4">
+            <div className="grid grid-cols-2 gap-3 mb-5">
               {unlinkedStores.map((store) => (
                 <button
                   key={store.id}

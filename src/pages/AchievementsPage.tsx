@@ -89,8 +89,8 @@ export function AchievementsPage() {
   return (
     <PageContainer title="Achievements" subtitle={`${unlockedCount}/${totalCount} unlocked`}>
       {/* Progress */}
-      <Card className="mb-4">
-        <div className="flex items-center justify-between mb-2">
+      <Card className="mb-6">
+        <div className="flex items-center justify-between mb-3">
           <span className="text-sm font-bold text-gray-800">Overall Progress</span>
           <span className="text-sm font-bold text-green-600">
             {Math.round((unlockedCount / totalCount) * 100)}%
@@ -105,8 +105,8 @@ export function AchievementsPage() {
       </Card>
 
       {/* Active Challenges Placeholder */}
-      <div className="mb-6">
-        <h2 className="text-lg font-bold text-gray-900 mb-3">Active Challenges</h2>
+      <div className="mb-8">
+        <h2 className="text-lg font-bold text-gray-900 mb-4">Active Challenges</h2>
         <Card className="bg-blue-50 border border-blue-100">
           <div className="flex items-center gap-3 mb-3">
             <span className="text-3xl">🎯</span>
@@ -130,9 +130,9 @@ export function AchievementsPage() {
 
       {/* Unlocked Badges */}
       {unlocked.length > 0 && (
-        <div className="mb-6">
-          <h2 className="text-lg font-bold text-gray-900 mb-3">Unlocked</h2>
-          <div className="grid grid-cols-3 gap-3">
+        <div className="mb-8">
+          <h2 className="text-lg font-bold text-gray-900 mb-4">Unlocked</h2>
+          <div className="grid grid-cols-3 gap-4">
             {unlocked.map((achievement) => (
               <Card key={achievement.id} padding="sm" className="text-center">
                 <div className="text-3xl mb-1">
@@ -160,9 +160,9 @@ export function AchievementsPage() {
       )}
 
       {/* Locked Badges */}
-      <div className="mb-6">
-        <h2 className="text-lg font-bold text-gray-900 mb-3">Locked</h2>
-        <div className="grid grid-cols-3 gap-3">
+      <div className="mb-8">
+        <h2 className="text-lg font-bold text-gray-900 mb-4">Locked</h2>
+        <div className="grid grid-cols-3 gap-4">
           {locked.map((achievement) => (
             <Card key={achievement.id} padding="sm" className="text-center opacity-40">
               <div className="text-3xl mb-1 grayscale">

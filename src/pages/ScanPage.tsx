@@ -209,9 +209,9 @@ export function ScanPage() {
           <p className="text-sm text-gray-500">points added to your balance</p>
         </div>
 
-        <Card className="mb-4">
+        <Card className="mb-6">
           <h3 className="text-sm font-bold text-gray-800 mb-3">Breakdown</h3>
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             {receiptResult.breakdown.map((item) => (
               <div key={item.productId} className="flex justify-between text-sm">
                 <span className="text-gray-600 truncate flex-1">{item.productName}</span>
@@ -227,7 +227,7 @@ export function ScanPage() {
           </div>
         </Card>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-4">
           <Button variant="secondary" fullWidth onClick={reset}>
             Scan Another
           </Button>
@@ -245,7 +245,7 @@ export function ScanPage() {
 
       {/* Store Selector */}
       {linkedStores.length > 0 && (
-        <div className="mt-4 mb-4">
+        <div className="mt-5 mb-5">
           <label className="text-sm font-medium text-gray-700 mb-2 block">Store</label>
           <select
             value={selectedStore}
@@ -265,8 +265,8 @@ export function ScanPage() {
       )}
 
       {tab === 'scan' && scanState === 'idle' && (
-        <div className="mt-6 flex flex-col items-center">
-          <div className="w-64 h-64 bg-gray-100 rounded-3xl flex flex-col items-center justify-center border-2 border-dashed border-gray-300 mb-6">
+        <div className="mt-8 flex flex-col items-center">
+          <div className="w-64 h-64 bg-gray-100 rounded-3xl flex flex-col items-center justify-center border-2 border-dashed border-gray-300 mb-8">
             <span className="text-6xl mb-3">📷</span>
             <p className="text-sm text-gray-500 text-center px-4">
               Point your camera at a grocery receipt
@@ -282,8 +282,8 @@ export function ScanPage() {
       )}
 
       {tab === 'scan' && scanState === 'scanning' && (
-        <div className="mt-6 flex flex-col items-center animate-fade-in">
-          <div className="w-64 h-64 bg-gray-900 rounded-3xl flex flex-col items-center justify-center relative overflow-hidden mb-6">
+        <div className="mt-8 flex flex-col items-center animate-fade-in">
+          <div className="w-64 h-64 bg-gray-900 rounded-3xl flex flex-col items-center justify-center relative overflow-hidden mb-8">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/30 to-transparent animate-scan-line" />
             <span className="text-5xl z-10">📄</span>
           </div>
@@ -294,9 +294,9 @@ export function ScanPage() {
 
       {/* Product selection (after scan or manual) */}
       {(scanState === 'select' || tab === 'manual') && scanState !== 'scanning' && scanState !== 'done' && (
-        <div className="mt-4">
+        <div className="mt-5">
           {tab === 'manual' && (
-            <div className="mb-4">
+            <div className="mb-5">
               <input
                 type="text"
                 value={searchQuery}
@@ -309,8 +309,8 @@ export function ScanPage() {
 
           {/* Cart Summary */}
           {cart.length > 0 && (
-            <Card className="mb-4 bg-green-50 border border-green-100">
-              <div className="flex items-center justify-between mb-2">
+            <Card className="mb-5 bg-green-50 border border-green-100">
+              <div className="flex items-center justify-between mb-3">
                 <span className="text-sm font-bold text-green-800">
                   {cart.reduce((sum, c) => sum + c.quantity, 0)} items in cart
                 </span>
@@ -335,7 +335,7 @@ export function ScanPage() {
           )}
 
           {/* Product List */}
-          <div className="space-y-2">
+          <div className="space-y-3">
             {(tab === 'manual' ? filteredProducts : ALL_PRODUCTS.filter((p) =>
               cart.some((c) => c.productId === p.id),
             ).concat(

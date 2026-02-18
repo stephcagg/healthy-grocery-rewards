@@ -69,7 +69,7 @@ export function HistoryPage() {
       <Tabs tabs={PERIOD_TABS} activeTab={period} onChange={setPeriod} />
 
       {/* Summary */}
-      <div className="grid grid-cols-2 gap-3 mt-4 mb-4">
+      <div className="grid grid-cols-2 gap-4 mt-5 mb-6">
         <Card className="text-center bg-green-50">
           <p className="text-xs text-gray-500 mb-1">Earned</p>
           <p className="text-xl font-extrabold text-green-600">+{totalEarned.toLocaleString()}</p>
@@ -82,8 +82,8 @@ export function HistoryPage() {
 
       {/* Bar Chart */}
       {dailyTotals.length > 0 && (
-        <Card className="mb-4">
-          <h3 className="text-sm font-bold text-gray-800 mb-3">Points Per Day</h3>
+        <Card className="mb-6">
+          <h3 className="text-sm font-bold text-gray-800 mb-4">Points Per Day</h3>
           <div className="flex items-end justify-between gap-1.5 h-32">
             {dailyTotals.map(([day, total]) => {
               const height = Math.max(4, (Math.abs(total) / maxDayTotal) * 100);
@@ -119,7 +119,7 @@ export function HistoryPage() {
           description="Scan a receipt to start earning points and see your history here."
         />
       ) : (
-        <div className="space-y-2">
+        <div className="space-y-3">
           {filteredTransactions.map((tx) => (
             <Card key={tx.id} padding="sm">
               <div className="flex items-center gap-3">

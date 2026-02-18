@@ -37,12 +37,12 @@ export function ShopPage() {
   return (
     <PageContainer title="Browse Products" subtitle="Discover healthy options and earn more points">
       {/* Category Tabs */}
-      <div className="flex overflow-x-auto gap-2 pb-3 -mx-4 px-4 scrollbar-hide mb-4">
+      <div className="flex overflow-x-auto gap-2.5 pb-3 -mx-5 px-5 scrollbar-hide mb-5">
         {CATEGORIES.map((cat) => (
           <button
             key={cat.id}
             onClick={() => setActiveCategory(cat.id)}
-            className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all flex-shrink-0 ${
+            className={`flex items-center gap-1.5 px-4 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all flex-shrink-0 ${
               activeCategory === cat.id
                 ? 'bg-green-500 text-white shadow-sm'
                 : 'bg-white text-gray-600 border border-gray-200 hover:border-gray-300'
@@ -55,10 +55,10 @@ export function ShopPage() {
       </div>
 
       {/* Product Count */}
-      <p className="text-xs text-gray-400 mb-3">{filteredProducts.length} products</p>
+      <p className="text-xs text-gray-400 mb-4">{filteredProducts.length} products</p>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-4">
         {filteredProducts.map((product) => (
           <Card
             key={product.id}
@@ -66,11 +66,11 @@ export function ShopPage() {
             hover
             onClick={() => setSelectedProduct(product)}
           >
-            <div className="text-center mb-2">
+            <div className="text-center mb-3">
               <span className="text-4xl">{product.emoji}</span>
             </div>
             <p className="text-sm font-semibold text-gray-800 truncate">{product.name}</p>
-            <p className="text-[11px] text-gray-400 truncate mb-2">{product.brand}</p>
+            <p className="text-[11px] text-gray-400 truncate mb-2.5">{product.brand}</p>
             <div className="flex items-center justify-between">
               <span className="text-sm font-bold text-gray-900">
                 {formatCurrency(product.price)}
@@ -92,11 +92,11 @@ export function ShopPage() {
           onClose={() => setSelectedProduct(null)}
           title={selectedProduct.name}
         >
-          <div className="text-center mb-4">
+          <div className="text-center mb-5">
             <span className="text-6xl">{selectedProduct.emoji}</span>
           </div>
 
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-5">
             <div>
               <p className="text-sm text-gray-500">{selectedProduct.brand}</p>
               <p className="text-lg font-bold text-gray-900">
@@ -113,7 +113,7 @@ export function ShopPage() {
           </div>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-1.5 mb-4">
+          <div className="flex flex-wrap gap-2 mb-5">
             {selectedProduct.tags.map((tag) => (
               <Badge key={tag} size="sm">
                 {tag}
@@ -122,7 +122,7 @@ export function ShopPage() {
           </div>
 
           {/* Nutrition Info */}
-          <div className="bg-gray-50 rounded-xl p-4">
+          <div className="bg-gray-50 rounded-xl p-5">
             <h3 className="text-sm font-bold text-gray-800 mb-3">Nutrition Facts</h3>
             <p className="text-[11px] text-gray-400 mb-2">
               Serving Size: {selectedProduct.servingSize}

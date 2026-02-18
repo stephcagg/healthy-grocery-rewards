@@ -6,7 +6,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen min-h-dvh bg-gray-50">
       <Header />
-      <main className="flex-1 pb-20">{children}</main>
+      <main className="flex-1 pb-24">{children}</main>
       <BottomNav />
     </div>
   );

@@ -74,18 +74,18 @@ export function OnboardingPage() {
     return (
       <div className="min-h-screen min-h-dvh bg-gradient-to-b from-green-50 to-white flex flex-col items-center justify-center px-6">
         <div className="animate-fade-in flex flex-col items-center text-center max-w-sm">
-          <div className="text-8xl mb-6 animate-bounce">🥦</div>
-          <h1 className="text-4xl font-extrabold bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent mb-3">
+          <div className="text-8xl mb-8 animate-bounce">🥦</div>
+          <h1 className="text-4xl font-extrabold bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent mb-4">
             NutriBucks
           </h1>
-          <p className="text-lg text-gray-600 mb-2">Earn rewards for eating healthy</p>
-          <p className="text-sm text-gray-400 mb-10">
+          <p className="text-lg text-gray-600 mb-3">Earn rewards for eating healthy</p>
+          <p className="text-sm text-gray-400 mb-12">
             Scan your grocery receipts, track your health score, and redeem points for discounts and donations.
           </p>
           <Button variant="primary" size="lg" fullWidth onClick={() => setStep(1)}>
             Get Started
           </Button>
-          <p className="text-xs text-gray-400 mt-4">Free to use. No credit card required.</p>
+          <p className="text-xs text-gray-400 mt-5">Free to use. No credit card required.</p>
         </div>
       </div>
     );
@@ -94,11 +94,11 @@ export function OnboardingPage() {
   // Step 1: Name & Avatar
   if (step === 1) {
     return (
-      <div className="min-h-screen min-h-dvh bg-white flex flex-col px-6 pt-12 pb-8">
+      <div className="min-h-screen min-h-dvh bg-white flex flex-col px-7 pt-14 pb-10">
         <div className="animate-fade-in flex-1 flex flex-col max-w-sm mx-auto w-full">
           <StepIndicator current={1} total={4} />
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">What should we call you?</h2>
-          <p className="text-sm text-gray-500 mb-6">Set up your profile to personalize your experience.</p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">What should we call you?</h2>
+          <p className="text-sm text-gray-500 mb-8">Set up your profile to personalize your experience.</p>
 
           <label className="text-sm font-medium text-gray-700 mb-2">Your Name</label>
           <input
@@ -111,7 +111,7 @@ export function OnboardingPage() {
           />
 
           <label className="text-sm font-medium text-gray-700 mb-3">Choose an Avatar</label>
-          <div className="grid grid-cols-4 gap-3 mb-8">
+          <div className="grid grid-cols-4 gap-4 mb-8">
             {AVATARS.map((av) => (
               <button
                 key={av}
@@ -149,15 +149,15 @@ export function OnboardingPage() {
   // Step 2: Store Selection
   if (step === 2) {
     return (
-      <div className="min-h-screen min-h-dvh bg-white flex flex-col px-6 pt-12 pb-8">
+      <div className="min-h-screen min-h-dvh bg-white flex flex-col px-7 pt-14 pb-10">
         <div className="animate-fade-in flex-1 flex flex-col max-w-sm mx-auto w-full">
           <StepIndicator current={2} total={4} />
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Where do you shop?</h2>
-          <p className="text-sm text-gray-500 mb-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Where do you shop?</h2>
+          <p className="text-sm text-gray-500 mb-8">
             Select stores you shop at to link your loyalty cards and start earning points.
           </p>
 
-          <div className="grid grid-cols-2 gap-3 mb-8 overflow-y-auto">
+          <div className="grid grid-cols-2 gap-4 mb-8 overflow-y-auto">
             {STORES.map((store) => {
               const isSelected = selectedStoreIds.includes(store.id);
               return (
@@ -209,11 +209,11 @@ export function OnboardingPage() {
     const selectedStores = STORES.filter((s) => selectedStoreIds.includes(s.id));
 
     return (
-      <div className="min-h-screen min-h-dvh bg-white flex flex-col px-6 pt-12 pb-8">
+      <div className="min-h-screen min-h-dvh bg-white flex flex-col px-7 pt-14 pb-10">
         <div className="animate-fade-in flex-1 flex flex-col max-w-sm mx-auto w-full">
           <StepIndicator current={3} total={4} />
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Link your accounts</h2>
-          <p className="text-sm text-gray-500 mb-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Link your accounts</h2>
+          <p className="text-sm text-gray-500 mb-8">
             Enter your loyalty card numbers. You can skip and add them later.
           </p>
 
@@ -262,15 +262,15 @@ export function OnboardingPage() {
   // Step 4: Health Goals
   if (step === 4) {
     return (
-      <div className="min-h-screen min-h-dvh bg-white flex flex-col px-6 pt-12 pb-8">
+      <div className="min-h-screen min-h-dvh bg-white flex flex-col px-7 pt-14 pb-10">
         <div className="animate-fade-in flex-1 flex flex-col max-w-sm mx-auto w-full">
           <StepIndicator current={4} total={4} />
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Your health goals</h2>
-          <p className="text-sm text-gray-500 mb-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Your health goals</h2>
+          <p className="text-sm text-gray-500 mb-8">
             Choose one or more goals. We'll personalize your point bonuses and product recommendations.
           </p>
 
-          <div className="grid grid-cols-2 gap-3 mb-8">
+          <div className="grid grid-cols-2 gap-4 mb-8">
             {HEALTH_GOALS.map((goal) => {
               const isSelected = selectedGoals.includes(goal.id);
               return (

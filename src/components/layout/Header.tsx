@@ -7,7 +7,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-      <div className="max-w-lg mx-auto px-4 h-14 flex items-center justify-between">
+      <div className="max-w-lg mx-auto px-5 h-14 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-2xl">🥦</span>
           <h1 className="text-lg font-bold bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">

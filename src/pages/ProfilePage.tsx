@@ -77,8 +77,8 @@ export function ProfilePage() {
   return (
     <PageContainer title="Profile">
       {/* Avatar & Name */}
-      <Card className="mb-4 text-center">
-        <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center text-4xl mx-auto mb-3">
+      <Card className="mb-6 text-center">
+        <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center text-4xl mx-auto mb-4">
           {user.avatar}
         </div>
         <h2 className="text-xl font-bold text-gray-900">{user.name}</h2>
@@ -89,7 +89,7 @@ export function ProfilePage() {
       </Card>
 
       {/* Health Goals */}
-      <Card className="mb-4">
+      <Card className="mb-6">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-sm font-bold text-gray-800">Health Goals</h3>
           <button
@@ -117,22 +117,22 @@ export function ProfilePage() {
       </Card>
 
       {/* Stats */}
-      <Card className="mb-4">
-        <h3 className="text-sm font-bold text-gray-800 mb-3">Your Stats</h3>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="bg-gray-50 rounded-xl p-3 text-center">
+      <Card className="mb-6">
+        <h3 className="text-sm font-bold text-gray-800 mb-4">Your Stats</h3>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-gray-50 rounded-xl p-4 text-center">
             <p className="text-2xl font-extrabold text-gray-900">{receipts.length}</p>
             <p className="text-[11px] text-gray-500">Receipts Scanned</p>
           </div>
-          <div className="bg-gray-50 rounded-xl p-3 text-center">
+          <div className="bg-gray-50 rounded-xl p-4 text-center">
             <p className="text-2xl font-extrabold text-gray-900">{totalItems}</p>
             <p className="text-[11px] text-gray-500">Items Tracked</p>
           </div>
-          <div className="bg-gray-50 rounded-xl p-3 text-center">
+          <div className="bg-gray-50 rounded-xl p-4 text-center">
             <p className="text-2xl font-extrabold text-green-600">{balance.total.toLocaleString()}</p>
             <p className="text-[11px] text-gray-500">Total Points</p>
           </div>
-          <div className="bg-gray-50 rounded-xl p-3 text-center">
+          <div className="bg-gray-50 rounded-xl p-4 text-center">
             <p className="text-2xl font-extrabold text-gray-900">{linkedStores.length}</p>
             <p className="text-[11px] text-gray-500">Stores Linked</p>
           </div>
@@ -140,7 +140,7 @@ export function ProfilePage() {
       </Card>
 
       {/* Quick Links */}
-      <div className="space-y-2 mb-6">
+      <div className="space-y-3 mb-8">
         <Card hover onClick={() => navigate('/history')}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -179,7 +179,7 @@ export function ProfilePage() {
       >
         Reset All Data
       </Button>
-      <p className="text-xs text-gray-400 text-center mt-2">
+      <p className="text-xs text-gray-400 text-center mt-3">
         This will delete all your data and start fresh.
       </p>
 

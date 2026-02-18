@@ -81,7 +81,7 @@ export function RewardsPage() {
   return (
     <PageContainer title="Rewards" subtitle="Redeem your points for great rewards">
       {/* Tier Display */}
-      <Card className="mb-4 bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-100">
+      <Card className="mb-6 bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-100">
         <div className="flex items-center gap-4 mb-3">
           <div className="text-4xl">{currentTier.emoji}</div>
           <div className="flex-1">
@@ -117,8 +117,8 @@ export function RewardsPage() {
 
       {/* Reward Sections */}
       {Object.entries(groupedRewards).map(([type, rewards]) => (
-        <div key={type} className="mb-6">
-          <h2 className="text-lg font-bold text-gray-900 mb-3">{TYPE_LABELS[type] || type}</h2>
+        <div key={type} className="mb-8">
+          <h2 className="text-lg font-bold text-gray-900 mb-4">{TYPE_LABELS[type] || type}</h2>
           <div className="space-y-3">
             {rewards.map((reward) => {
               const canAfford = balance.available >= reward.pointsCost;
@@ -159,12 +159,12 @@ export function RewardsPage() {
           title="Confirm Redemption"
           size="sm"
         >
-          <div className="text-center mb-4">
+          <div className="text-center mb-5">
             <span className="text-5xl">{confirmReward.emoji}</span>
             <h3 className="text-lg font-bold text-gray-900 mt-3">{confirmReward.name}</h3>
-            <p className="text-sm text-gray-500 mt-1">{confirmReward.description}</p>
+            <p className="text-sm text-gray-500 mt-1.5">{confirmReward.description}</p>
           </div>
-          <div className="bg-gray-50 rounded-xl p-4 mb-4 text-center">
+          <div className="bg-gray-50 rounded-xl p-5 mb-5 text-center">
             <p className="text-sm text-gray-500">Cost</p>
             <p className="text-2xl font-extrabold text-green-600">
               {confirmReward.pointsCost.toLocaleString()} pts

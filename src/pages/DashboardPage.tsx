@@ -36,15 +36,15 @@ export function DashboardPage() {
   return (
     <PageContainer>
       {/* Greeting */}
-      <div className="mb-4">
+      <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-900">
           Hey, {user.name}! {user.avatar}
         </h1>
-        <p className="text-sm text-gray-500 mt-0.5">Let's make healthy choices today.</p>
+        <p className="text-sm text-gray-500 mt-1">Let's make healthy choices today.</p>
       </div>
 
       {/* Points Summary */}
-      <Card className="mb-4 bg-gradient-to-br from-green-500 to-emerald-600 text-white">
+      <Card className="mb-6 bg-gradient-to-br from-green-500 to-emerald-600 text-white">
         <div className="flex items-center justify-between mb-3">
           <span className="text-sm font-medium opacity-80">Available Points</span>
           <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">
@@ -61,7 +61,7 @@ export function DashboardPage() {
       </Card>
 
       {/* Streak & Tier row */}
-      <div className="grid grid-cols-2 gap-3 mb-4">
+      <div className="grid grid-cols-2 gap-4 mb-6">
         {/* Streak */}
         <Card className="text-center">
           <div className="text-3xl mb-1">🔥</div>
@@ -95,7 +95,7 @@ export function DashboardPage() {
       </div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-2 gap-3 mb-4">
+      <div className="grid grid-cols-2 gap-4 mb-6">
         <Button
           variant="outline"
           size="md"
@@ -116,9 +116,9 @@ export function DashboardPage() {
 
       {/* Linked Stores Quick Info */}
       {linkedStores.length > 0 && (
-        <Card className="mb-4" hover onClick={() => navigate('/stores')}>
+        <Card className="mb-6" hover onClick={() => navigate('/stores')}>
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <span className="text-lg">🏪</span>
               <span className="text-sm font-semibold text-gray-800">
                 {linkedStores.length} Store{linkedStores.length !== 1 ? 's' : ''} Linked
@@ -130,8 +130,8 @@ export function DashboardPage() {
       )}
 
       {/* Recent Activity */}
-      <div className="mb-4">
-        <div className="flex items-center justify-between mb-3">
+      <div className="mb-6">
+        <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-gray-900">Recent Activity</h2>
           {transactions.length > 0 && (
             <button
@@ -149,7 +149,7 @@ export function DashboardPage() {
             <p className="text-sm text-gray-500">No activity yet. Scan a receipt to get started!</p>
           </Card>
         ) : (
-          <div className="space-y-2">
+          <div className="space-y-3">
             {recentTransactions.map((tx) => (
               <Card key={tx.id} padding="sm">
                 <div className="flex items-center gap-3">
